@@ -28,6 +28,11 @@ body {
      color: var(--text-color);
 }
 
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2 rem;
+}
+
 .header {
      position: fixed;
      top: 0;
@@ -65,3 +70,10 @@ body {
     color: var(--text-color);
     display: none;
 }
+
+.home {
+   display: flex;
+   justify-content: center ;
+   align-items: center;
+}
+
