@@ -1,4 +1,6 @@
-/* scroll section active links */
+/* toggle icon navbar */
+
+
 let sections = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header nav a');
 
