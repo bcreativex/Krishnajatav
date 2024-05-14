@@ -1,25 +1,26 @@
 // firebase connection 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyA9-GWySGWBtZzaCJ8G_zRX0yOzKedTvVI",
-    authDomain: "my-portfolio-2c04e.firebaseapp.com",
-    databaseURL: "https://my-portfolio-2c04e-default-rtdb.firebaseio.com",
-    projectId: "my-portfolio-2c04e",
-    storageBucket: "my-portfolio-2c04e.appspot.com",
-    messagingSenderId: "580404920438",
-    appId: "1:580404920438:web:3b7585e823543d4efb1f57",
-    measurementId: "G-WDGSGBWPTL"
+    apiKey: "AIzaSyAdnev-zaH0mgZnAiPbQPu2bN-KcAImm7k",
+    authDomain: "portfolio-39b95.firebaseapp.com",
+    databaseURL: "https://portfolio-39b95-default-rtdb.firebaseio.com",
+    projectId: "portfolio-39b95",
+    storageBucket: "portfolio-39b95.appspot.com",
+    messagingSenderId: "580903397676",
+    appId: "1:580903397676:web:c2efd859e9cfffdf282489",
+    measurementId: "G-M8ZE232V1Q"
   };
 
+
 //   initialize firebase
-  firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 
 // reference database
- var contact = firebase.database().ref("contact");  
+ var contactFormDB = firebase.database().ref("contactForm");  
 
- document.getElementById("contact").addEventListener("submit" ,submiForm);
+ document.getElementById("contactForm").addEventListener("submit" ,submitForm);
 
- function submiForm(e){
+ function submitForm(e){
     e.preventDefault();
 
     var name = getElementVal('name');
@@ -27,9 +28,32 @@ const firebaseConfig = {
     var number = getElementVal('number');
     var msgContent = getElementVal('msgContent');
     
+    saveMessages(name, emailid, number, msgContent);
 
-    console.log(name, emailid, number, msgContent);
+    //enable alert
+    document.querySelector(".alert").style.display = "block";
+
+    //disable alert
+    setTimeout(() => {
+    document.querySelector(".alert").style.display = "none";
+    }, 3000);
+
+    //reset the form
+    document.getElementById("contactForm").reset();
  }
+
+const saveMessages = (name, emailid, number, msgContent) => {
+    var newContactForm = contactFormDB.push();
+
+    newContactForm.set({
+        name: name,
+        emailid: emailid,
+        number: number,
+        msgContent: msgContent,
+
+    });
+
+};
 
  const getElementVal = (id) => {
     return document.getElementById(id).value;

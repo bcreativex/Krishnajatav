@@ -382,6 +382,17 @@ span {
     color: var(--second-bg-color);
 }
 
+.alert {
+    width: 100%;
+    background: var(--main-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 800;
+    display: none;
+}
+
 /* BREAKPOINTS */
 
 @media (max-width: 1200px) {
