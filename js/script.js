@@ -21,6 +21,14 @@ const firebaseConfig = {
 
  function submiForm(e){
     e.preventDefault();
+
+    var name = getElementVal('name');
+    var emailid = getElementVal('emailid');
+    var number = getElementVal('number');
+    var msgContent = getElementVal('msgContent');
+    
+
+    console.log(name, emailid, number, msgContent);
  }
 
  const getElementVal = (id) => {
