@@ -1,3 +1,32 @@
+// firebase connection 
+
+const firebaseConfig = {
+    apiKey: "AIzaSyA9-GWySGWBtZzaCJ8G_zRX0yOzKedTvVI",
+    authDomain: "my-portfolio-2c04e.firebaseapp.com",
+    databaseURL: "https://my-portfolio-2c04e-default-rtdb.firebaseio.com",
+    projectId: "my-portfolio-2c04e",
+    storageBucket: "my-portfolio-2c04e.appspot.com",
+    messagingSenderId: "580404920438",
+    appId: "1:580404920438:web:3b7585e823543d4efb1f57",
+    measurementId: "G-WDGSGBWPTL"
+  };
+
+//   initialize firebase
+  firebase.initializeApp(firebaseConfig);
+
+// reference database
+ var contact = firebase.database().ref("contact");  
+
+ document.getElementById("contact").addEventListener("submit" ,submiForm);
+
+ function submiForm(e){
+    e.preventDefault();
+ }
+
+ const getElementVal = (id) => {
+    return document.getElementById(id).value;
+ };
+
 /*================= toggle icon navbar ==============*/
 let menuIcon = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
