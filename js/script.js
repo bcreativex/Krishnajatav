@@ -115,7 +115,7 @@ ScrollReveal({
 /*================= typed js ==============*/
 
 const typed = new Typed('.multiple-text', {
-    strings: ['Frontend Developer','Video Editor','Digital Artist'],
+    strings: ['Web Developer','Video Editor','Digital Artist'],
     typeSpeed: 100,
     backSpeed: 100,
     backDelay: 100,
